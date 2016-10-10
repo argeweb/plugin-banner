@@ -9,7 +9,6 @@
 from argeweb import Controller, scaffold, route_menu, Fields, route_with
 from argeweb.components.pagination import Pagination
 from argeweb.components.search import Search
-from .. import banner_category_action_helper
 
 
 class BannerCategory(Controller):
@@ -17,10 +16,7 @@ class BannerCategory(Controller):
         components = (scaffold.Scaffolding, Pagination, Search)
         pagination_limit = 10
 
-    class Scaffold:
-        title = banner_category_action_helper["actions"]
-
-    @route_menu(list_name=u"backend", text=u"輪撥圖分類", sort=102, icon="photo", group=u"內容管理")
+    @route_menu(list_name=u"backend", text=u"輪撥圖分類", sort=102, group=u"內容管理")
     @route_with('/admin/banner_category/list')
     def admin_list(self):
         return scaffold.list(self)
