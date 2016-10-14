@@ -23,10 +23,3 @@ class Banner(Controller):
     @route_with('/admin/banner/list')
     def admin_list(self):
         return scaffold.list(self)
-
-    @route_with('/admin/banner/plugins_check')
-    def admin_plugins_check(self):
-        self.meta.change_view('jsonp')
-        self.context['data'] = {
-            'status': "enable"
-        }
