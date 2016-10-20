@@ -16,7 +16,6 @@ class BannerCategory(Controller):
         components = (scaffold.Scaffolding, Pagination, Search)
         pagination_limit = 10
 
-    @route_menu(list_name=u"backend", text=u"輪撥圖分類", sort=102, group=u"內容管理")
-    @route_with('/admin/banner_category/list')
+    @route_menu(list_name=u"backend", text=u"輪撥圖分類", sort=202, group=u"視覺形象")
     def admin_list(self):
         return scaffold.list(self)

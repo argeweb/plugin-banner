@@ -34,7 +34,7 @@ class BannerModel(BasicModel):
     def all_enable(cls, category=None, *args, **kwargs):
         cat = None
         if category:
-            cat = BannerCategoryModel.get_by_name(category)
+            cat = BannerCategoryModel.find_by_name(category)
         if cat is None:
             return cls.query(cls.is_enable==True).order(-cls.sort)
         else:

@@ -10,7 +10,7 @@ from argeweb import datastore
 from models.banner_model import BannerModel
 from models.banner_model import BannerCategoryModel
 
-datastore.register("Banner", BannerModel.all_enable)
+datastore.register("banner_list", BannerModel.all_enable)
 
 plugins_helper = {
     "title": u"輪撥圖",

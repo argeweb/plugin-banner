@@ -21,11 +21,18 @@ class BannerCategoryModel(BasicModel):
     title = Fields.StringProperty()
     is_enable = Fields.BooleanProperty(default=True)
 
-
-    @classmethod
-    def get_by_name(cls, name):
-        return cls.query(cls.name==name).get()
-
     @classmethod
     def all_enable(cls):
         return cls.query(cls.is_enable==True).order(-cls.sort)
+
+    @classmethod
+    def insert(cls, name, title, is_enable=True):
+        item = cls.find_by_name(name)
+        if item is not None:
+            return
+        item = cls()
+        item.name = name
+        item.title = title
+        item.is_enable = is_enable
+        item.put()
+        return item
