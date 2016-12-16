@@ -13,9 +13,9 @@ from argeweb import Fields
 class BannerCategoryModel(BasicModel):
     class Meta:
         label_name = {
-            "name": u"識別名稱",
-            "title": u"分類標題",
-            "is_enable": u"啟用",
+            'name': u'識別名稱',
+            'title': u'分類標題',
+            'is_enable': u'啟用',
         }
     name = Fields.StringProperty()
     title = Fields.StringProperty()

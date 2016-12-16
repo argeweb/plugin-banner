@@ -14,13 +14,13 @@ from banner_category_model import BannerCategoryModel
 class BannerModel(BasicModel):
     class Meta:
         label_name = {
-            "name": u"名稱",
-            "description": u"描述",
-            "link": u"連結網址",
-            "link_title": u"連結標題",
-            "image": u"圖片",
-            "is_enable": u"啟用",
-            "category": u"分類",
+            'name': u'名稱',
+            'description': u'描述',
+            'link': u'連結網址',
+            'link_title': u'連結標題',
+            'image': u'圖片',
+            'is_enable': u'啟用',
+            'category': u'分類',
         }
     name = Fields.StringProperty()
     description = Fields.TextProperty()
