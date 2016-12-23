@@ -19,6 +19,6 @@ class Banner(Controller):
     class Scaffold:
         display_properties_in_list = ('name', 'image', 'is_enable', 'category')
 
-    @route_menu(list_name=u'backend', text=u'輪撥圖', sort=9601, group=u'視覺形象')
+    @route_menu(list_name=u'backend', text=u'輪播圖', sort=9601, group=u'視覺形象')
     def admin_list(self):
         return scaffold.list(self)
