@@ -17,7 +17,7 @@ class BannerCategory(Controller):
         pagination_limit = 10
 
     class Scaffold:
-        display_properties_in_list = ('name', 'title', 'is_enable')
+        display_in_list = ('name', 'title', 'is_enable')
 
     @route_menu(list_name=u'backend', text=u'輪播圖分類', sort=9602, group=u'視覺形象')
     def admin_list(self):
