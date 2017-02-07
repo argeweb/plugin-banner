@@ -13,7 +13,7 @@ from argeweb import Fields
 class BannerCategoryModel(BasicModel):
     class Meta:
         label_name = {
-            'name': u'識別名稱',
+            'name': u'系統編號',
             'title': u'分類標題',
             'is_enable': u'啟用',
         }
