@@ -28,7 +28,7 @@ class BannerModel(BasicModel):
     link_title = Fields.StringProperty()
     image = Fields.ImageProperty()
     is_enable = Fields.BooleanProperty(default=True)
-    category = Fields.CategoryProperty(required=True, kind=BannerCategoryModel)
+    category = Fields.CategoryProperty(kind=BannerCategoryModel)
 
     @classmethod
     def all_enable(cls, category=None, *args, **kwargs):
