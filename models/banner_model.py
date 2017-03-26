@@ -12,23 +12,13 @@ from banner_category_model import BannerCategoryModel
 
 
 class BannerModel(BasicModel):
-    class Meta:
-        label_name = {
-            'name': u'名稱',
-            'description': u'描述',
-            'link': u'連結網址',
-            'link_title': u'連結標題',
-            'image': u'圖片',
-            'is_enable': u'啟用',
-            'category': u'分類',
-        }
-    name = Fields.StringProperty()
-    description = Fields.TextProperty()
-    link = Fields.StringProperty()
-    link_title = Fields.StringProperty()
-    image = Fields.ImageProperty()
-    is_enable = Fields.BooleanProperty(default=True)
-    category = Fields.CategoryProperty(kind=BannerCategoryModel)
+    name = Fields.StringProperty(verbose_name=u'識別名稱')
+    description = Fields.TextProperty(verbose_name=u'描述')
+    link = Fields.StringProperty(verbose_name=u'連結網址')
+    link_title = Fields.StringProperty(verbose_name=u'連結標題')
+    image = Fields.ImageProperty(verbose_name=u'圖片')
+    is_enable = Fields.BooleanProperty(verbose_name=u'啟用', default=True)
+    category = Fields.CategoryProperty(verbose_name=u'分類', kind=BannerCategoryModel)
 
     @classmethod
     def all_enable(cls, category=None, *args, **kwargs):

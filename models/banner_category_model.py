@@ -11,15 +11,9 @@ from argeweb import Fields
 
 
 class BannerCategoryModel(BasicModel):
-    class Meta:
-        label_name = {
-            'name': u'系統編號',
-            'title': u'分類標題',
-            'is_enable': u'啟用',
-        }
-    name = Fields.StringProperty()
-    title = Fields.StringProperty()
-    is_enable = Fields.BooleanProperty(default=True)
+    name = Fields.StringProperty(verbose_name=u'識別名稱')
+    title = Fields.StringProperty(verbose_name=u'分類標題')
+    is_enable = Fields.BooleanProperty(verbose_name=u'啟用', default=True)
 
     @classmethod
     def all_enable(cls):
