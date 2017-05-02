@@ -18,6 +18,6 @@ class BannerCategory(Controller):
     class Scaffold:
         display_in_list = ('name', 'title', 'is_enable')
 
-    @route_menu(list_name=u'backend', text=u'輪播圖分類', sort=9602, group=u'視覺形象')
+    @route_menu(list_name=u'backend', text=u'輪播圖分類', sort=317, group=u'內容管理')
     def admin_list(self):
         return scaffold.list(self)
