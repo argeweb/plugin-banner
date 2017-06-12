@@ -12,9 +12,6 @@ from argeweb.components.search import Search
 
 
 class BannerCategory(Controller):
-    class Meta:
-        components = (scaffold.Scaffolding, Pagination, Search)
-
     class Scaffold:
         display_in_list = ('name', 'title', 'is_enable')
 
