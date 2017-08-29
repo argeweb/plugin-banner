@@ -19,13 +19,8 @@ class BannerModel(BasicModel):
     image = Fields.ImageProperty(verbose_name=u'圖片')
     is_enable = Fields.BooleanProperty(verbose_name=u'啟用', default=True)
     category = Fields.CategoryProperty(verbose_name=u'分類', kind=BannerCategoryModel)
+    category_name = Fields.SearchingHelperProperty(verbose_name=u'所屬產品', target='category', target_field_name='name')
 
     @classmethod
     def all_enable(cls, category=None, *args, **kwargs):
-        cat = None
-        if category:
-            cat = BannerCategoryModel.find_by_name(category)
-        if cat is None:
-            return cls.query(cls.is_enable==True).order(-cls.sort)
-        else:
-            return cls.query(cls.category==cat.key, cls.is_enable==True).order(-cls.sort)
+        return cls.query(cls.category_name==category, cls.is_enable==True).order(-cls.sort)

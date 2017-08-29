@@ -6,15 +6,13 @@
 # Web: http://www.yooliang.com/
 # Date: 2015/7/12.
 
-from argeweb import Controller, scaffold, route_menu, Fields, route_with
-from argeweb.components.pagination import Pagination
-from argeweb.components.search import Search
+from argeweb import Controller, scaffold, route_menu
 
 
 class BannerCategory(Controller):
     class Scaffold:
-        display_in_list = ('name', 'title', 'is_enable')
+        display_in_list = ['name', 'title', 'is_enable']
 
-    @route_menu(list_name=u'backend', text=u'輪播圖分類', sort=317, group=u'內容管理')
+    @route_menu(list_name=u'backend', group=u'內容管理', text=u'輪播圖分類', sort=317)
     def admin_list(self):
         return scaffold.list(self)

@@ -21,7 +21,7 @@ class BannerCategoryModel(BasicModel):
 
     @classmethod
     def insert(cls, name, title, is_enable=True):
-        item = cls.find_by_name(name)
+        item = cls.get_by_name(name)
         if item is not None:
             return
         item = cls()
