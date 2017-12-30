@@ -36,6 +36,12 @@ plugins_helper = {
                 {'action': 'view', 'name': u'檢視輪播圖分類'},
                 {'action': 'delete', 'name': u'刪除輪播圖分類'},
             ]
+        },
+        'config': {
+            'group': u'輪播圖設定',
+            'actions': [
+                {'action': 'config', 'name': u'輪播圖設定'},
+            ]
         }
     }
 }
