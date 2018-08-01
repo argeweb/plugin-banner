@@ -16,9 +16,6 @@ class Banner(Controller):
 
     @route_menu(list_name=u'backend', group=u'內容管理', text=u'輪播圖', sort=316)
     def admin_list(self):
-        self.fire(
-            event_name='stop_event'
-        )
         return scaffold.list(self)
 
     def admin_add(self):
@@ -30,6 +27,7 @@ class Banner(Controller):
     def before_scaffold(self):
         super(Banner, self).before_scaffold()
         config = ConfigModel.get_or_create_by_name('banner_config')
+        self.scaffold.change_field_visibility('name', config.use_custom_name, config.use_custom_name)
         self.scaffold.change_field_visibility('category', config.use_category, config.use_category)
         self.scaffold.change_field_visibility('link', config.use_description, config.use_description)
         self.scaffold.change_field_visibility('description', config.use_link, config.use_link)

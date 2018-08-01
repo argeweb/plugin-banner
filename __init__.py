@@ -10,6 +10,7 @@ from argeweb import ViewDatastore
 from models.banner_model import BannerModel
 from models.banner_model import BannerCategoryModel
 
+ViewDatastore.register('banner', BannerModel.find_by_properties)
 ViewDatastore.register('banner_list', BannerModel.all_enable)
 
 plugins_helper = {

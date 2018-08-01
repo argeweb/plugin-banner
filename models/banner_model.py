@@ -12,6 +12,7 @@ from banner_category_model import BannerCategoryModel
 
 
 class BannerModel(BasicModel):
+    name = Fields.StringProperty(verbose_name=u'識別名稱')
     title = Fields.StringProperty(verbose_name=u'標題')
     link = Fields.StringProperty(verbose_name=u'連結網址')
     description = Fields.TextProperty(verbose_name=u'描述')
